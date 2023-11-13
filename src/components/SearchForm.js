@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+import Search from '../pages/Search';
 
 const SearchForm = () => {
 
@@ -33,7 +34,7 @@ const SearchForm = () => {
     }
   }
 
-  return <form onSubmit={handleSubmit} className={`${isAnimating ? "animate-shake" : "animate-none"} relative w-full`}>
+  return <form onSubmit={handleSubmit} className={`${isAnimating ? "animate-shake" : "animate-none"} relative w-full `}>
     <input
       onChange={handleSearchInput}
       className='input mt-2' type="text" placeholder='Search for a camera...' />
