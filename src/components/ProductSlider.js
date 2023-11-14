@@ -16,7 +16,6 @@ import Product from './Product'
 
 
 const ProductSlider = ({ data }) => {
-  console.log(data);
   return <Swiper modules={[Navigation, Pagination]} navigation={true} loop={false}
 
     breakpoints={{

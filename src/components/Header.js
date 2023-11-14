@@ -20,7 +20,7 @@ import { CartContext } from '../context/CartContext';
 
 const Header = () => {
 
-  const { isOpen, setIsOpen } = useContext(CartContext);
+  const { isOpen, setIsOpen, itemsAmount } = useContext(CartContext);
   const [catNavMobile, setCatnavMobile] = useState(false);
 
 
@@ -54,17 +54,17 @@ const Header = () => {
             {/* phone */}
             <div className='hidden xl:flex uppercase'>Need help? 123 456 798</div>
             {/* cart icon */}
-            <div onClick={() => setIsOpen(!isOpen)} className='relative cursor-pointer'>
-              <SlBag className='text-2xl' />
+            <div className='relative cursor-pointer'>
+              <SlBag onClick={() => setIsOpen(!isOpen)} className='text-2xl' />
               {/* amount */}
               <div className='bg-accent text-primary absolute w-[18px] h-[18px] rounded-full top-3 
-              right-0  text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]'>2</div>
+              right-0  text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]'>{itemsAmount}</div>
 
               {/* cart */}
               <div
                 className={`
-                ${isOpen ? 'right-0' : '-right-full'}
-            bg-[#0e0f10] shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[500px] transition-all duration-300]`}>
+                 ${isOpen ? 'right-0' : '-right-full'}
+                 bg-[#0e0f10] shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[500px] transition-all duration-300]`}>
                 <Cart />
               </div>
 

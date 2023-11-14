@@ -10,7 +10,6 @@ import ProductSlider from './ProductSlider';
 const RelatedProducts = ({ categoryTitle }) => {
   // get product by category title
   const { data } = useFetch(`/products?populate=*&filters[categories][title]=${categoryTitle}`);
-  console.log(data);
   return (
     <div className='mb-16'>
       <div className="container mx-auto">
